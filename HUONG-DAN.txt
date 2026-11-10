@@ -1,0 +1,10 @@
+ASTRO MISSION – Gắn âm thanh cho bài học
+
+1. Giải nén toàn bộ gói. Nhấp đúp index.html để chơi.
+2. Để gắn âm thanh, nhấp chuột phải vào am-thanh.js, chọn Open with → Notepad.
+3. Dán địa chỉ MP3 vào giữa hai dấu ngoặc kép ở bên phải tên nội dung. Giữ nguyên tên mục, dấu phẩy và phần còn lại của tệp.
+   Ví dụ khi đã chép hat-thoc.mp3 vào thư mục audio:
+   "hạt thóc": "audio/hat-thoc.mp3",
+   Cô cũng có thể dán địa chỉ HTTPS mở và phát trực tiếp bản thu. Đường dẫn trên mạng cần có Internet khi phát.
+4. Lưu tệp rồi mở lại index.html. Chạm vào từng vần ở màn so sánh để thử bản thu. Mỗi màn có một mục “Mở đầu Màn …” riêng.
+5. Muốn dùng ngoại tuyến, chép tất cả các MP3 vào audio và dùng đường dẫn tương đối. Giữ nguyên cấu trúc thư mục khi chuyển máy.
