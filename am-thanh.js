@@ -8,7 +8,7 @@ window.ASTRO_MP3 = {
   "Mở đầu Màn 6 – Thiên hà tỏa sáng": "audio/chuc_mung_cac_phi_hanh_gia_nhi_cac_ban_da_hoan.mp3",
   "Lời chào ASTRO": "",
   "Thông báo mất năng lượng": "",
-  "ac": "audio/AC-1_1.mp3",
+  "ac": "audio/Ac-1_1.mp3",
   "at": "audio/At_1.mp3",
   "ăc": "audio/Ăc_1.mp3",
   "ăt": "audio/Ăt_1.mp3",
