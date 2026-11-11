@@ -17,7 +17,7 @@ window.ASTRO_MP3 = {
   "oc": "audio/Oc_1.mp3",
   "ot": "audio/Ot_1.mp3",
   "ôc": "audio/Ôc_1.mp3",
-  "ôt": "audio/Ôt_1.mp3",
+  "ôt": "audio/Ôt.mp3",
   "ơt": "audio/Ơt_1.mp3",
   "uc": "audio/Uc_1.mp3",
   "ut": "audio/Ut_1.mp3",
