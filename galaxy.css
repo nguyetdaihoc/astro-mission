@@ -83,3 +83,38 @@ button.astro-speaker:focus-visible {
   outline: 3px solid #7856e8;
   outline-offset: 2px;
 }
+button.astro-speaker {
+  display: inline-grid;
+  place-items: center;
+  vertical-align: middle;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  border: 2px solid #4cc9f0;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #4057a8, #17265c);
+  box-shadow: 0 3px 0 #17265c, 0 5px 10px #17265c33;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+@media (hover: hover) {
+  button.astro-speaker:hover {
+    background: linear-gradient(145deg, #526bc2, #243779);
+    transform: translateY(-2px);
+  }
+}
+
+button.astro-speaker:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #17265c;
+}
+
+button.astro-speaker:focus-visible {
+  outline: 3px solid #ffd65a;
+  outline-offset: 3px;
+}
