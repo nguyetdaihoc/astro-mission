@@ -186,7 +186,7 @@ function word(){const w=words[wordIndex],parts=w.split(' '),ts=targets[wordIndex
 
                 //act('Nghe bản thu',()=>play(w));
   document.getElementById('actions').append(makeSpeaker(w, 'Nghe từ ' + w));
-                act('Về bầu trời sao',stars).id='skyback'
+                act('⬅️Về bầu trời sao',stars).id='skyback'
 }
 
 const errors=[['đôi','mắc','mắt','ăt'],['hạt','thót','thóc','oc'],['lọ','mựt','mực','ưc']];
