@@ -40,6 +40,15 @@ function show(html,kind){stop();panel.dataset.kind=kind;body.innerHTML=html;if(!
  const from=kind==='map'?'scale(.95)':scene===2?'translateY(15px) scale(.98)':scene===3?'translateX(20px)':'translateY(12px)';
  animateIn(body,[{opacity:.35,transform:from},{opacity:1,transform:'none'}],320)
 }
+
+function makeSpeaker(audioKey, label) {
+  const speaker = button('🔊', () => play(audioKey), 'astro-speaker');
+  speaker.type = 'button';
+  speaker.title = label;
+  speaker.setAttribute('aria-label', label);
+  return speaker;
+}
+
 function button(text,fn,cls='minor'){const b=document.createElement('button');b.textContent=text;b.className=cls;b.onclick=fn;return b}
 function add(id,label,fn,cls){const b=button(label,fn,cls);$(id).append(b);return b}
 function act(label,fn,cls){return add('actions',label,fn,cls)}
@@ -159,7 +168,10 @@ function zoom(){
  for(const key of pair){
   const card=document.createElement('div');
   card.innerHTML='<strong>'+key[0]+'<em>'+key[1]+'</em></strong>';
-  card.append(button('▶ Nghe '+key,()=>play(key),'minor'));
+  
+  //card.append(button('▶ Nghe '+key,()=>play(key),'minor'));
+  card.append(makeSpeaker(key, 'Nghe vần ' + key));
+  
   $('pair').append(card);
  }
  act('Về bảng vần',matrix);
@@ -171,8 +183,12 @@ function word(){const w=words[wordIndex],parts=w.split(' '),ts=targets[wordIndex
  function setMode(m){reading=m;$('readPrompt').textContent=m==='Đọc cá nhân'?'Em đọc từng tiếng, sau đó đọc liền cả cụm từ.':'Bạn thứ nhất đọc “'+parts[0]+'”, bạn thứ hai đọc “'+parts[1]+'”. Cả nhóm đọc lại “'+w+'”.';[...$('modes').children].forEach(b=>b.setAttribute('aria-pressed',String(b.textContent===m)))}
  for(const m of ['Đọc cá nhân','Đọc nối tiếp'])add('modes',m,()=>setMode(m),'chip');setMode(reading);
  parts.forEach((s,i)=>add('answers',s,()=>{if(!matches[i])return feedback('Em nhìn lại tiếng có vần '+target+' nhé.');foundParts.add(i);body.querySelector('[data-part="'+i+'"]').classList.add('found-part');if(turn+1<steps.length){turn++;word();feedback('Đúng rồi! Bây giờ em tìm vần '+steps[turn]+'.');return}if(!state.stars.includes(wordIndex)){state.stars.push(wordIndex);save()}tone([[660,0,.3],[880,.2,.4]]);feedback((matches.every(Boolean)?'Cả hai tiếng đều chứa vần '+target+'. ':'Đúng rồi! ' )+'Ngôi sao “'+w+'” đã sáng.');celebrate();[...$('answers').children].forEach(b=>b.disabled=true);$('skyback').className='gold'},'choice'));
- act('Nghe bản thu',()=>play(w));act('Về bầu trời sao',stars).id='skyback'
+
+                //act('Nghe bản thu',()=>play(w));
+  document.getElementById('actions').append(makeSpeaker(w, 'Nghe từ ' + w));
+                act('Về bầu trời sao',stars).id='skyback'
 }
+
 const errors=[['đôi','mắc','mắt','ăt'],['hạt','thót','thóc','oc'],['lọ','mựt','mực','ưc']];
 function startTraining(){
  trainingIndex=0;
