@@ -23,10 +23,18 @@ const prompts=['Khởi động phi thuyền rồi lắng nghe ASTRO. Khi tín hi
 const vowels=[...'aăâoôơuư'];
 const targets=[['ât',''],['','ưc'],['ôt','ôc'],['at','oc'],['uc','ăc'],['ot',''],['','ăt'],['ac','ac'],['âc',''],['','ơt']];
 const launchLine='Các ngôi sao ngôn ngữ đang mất năng lượng! Các phi hành gia nhí hãy cùng mình đọc đúng vần và từ để thắp sáng thiên hà nhé!';
-let state={stars:[],rating:'',trained:false};try{Object.assign(state,JSON.parse(localStorage.astroGalaxy||'{}'))}catch{}
+//let state={stars:[],rating:'',trained:false};try{Object.assign(state,JSON.parse(localStorage.astroGalaxy||'{}'))}catch{}
+let state = {
+  stars: [],
+  rating: '',
+  trained: false
+};
 let helpText=prompts[0],audio=null,voiceJob=0,timers=[],synth=null,scene=0,vowel='',end='',wordIndex=0,turn=0,reading='Đọc cá nhân',trainingIndex=0,returnScene=home;
 const panel=$('panel'),body=$('body');
-function save(){try{localStorage.astroGalaxy=JSON.stringify(state)}catch{}dashboard()}
+//function save(){try{localStorage.astroGalaxy=JSON.stringify(state)}catch{}dashboard()}
+function save() {
+  dashboard();
+}
 function stop(){timers.forEach(clearTimeout);timers=[];voiceJob++;if(audio){audio.pause();URL.revokeObjectURL(audio.src);audio=null}window.speechSynthesis?.cancel()}
 function show(html,kind){stop();panel.dataset.kind=kind;body.innerHTML=html;if(!panel.open)panel.showModal();panel.scrollTop=0;panel.dataset.scene=String(scene);
  const from=kind==='map'?'scale(.95)':scene===2?'translateY(15px) scale(.98)':scene===3?'translateX(20px)':'translateY(12px)';
