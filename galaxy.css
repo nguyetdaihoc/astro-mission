@@ -57,3 +57,29 @@ dialog.answer-popup::backdrop{background:#1418428c}
  #panel:has(.matrix-board) #body>p{font-size:14px;margin:4px 0}
 }
 @media(prefers-reduced-motion:reduce){dialog.answer-popup[open],.medal img+img{animation:none}}
+
+// them nut loaa
+button.astro-speaker {
+  display: inline-grid;
+  place-items: center;
+  vertical-align: middle;
+  flex: 0 0 auto;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border: 2px solid #4cc9f0;
+  border-radius: 50%;
+  background: #eefaff;
+  font-size: 23px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+button.astro-speaker:hover {
+  background: #d5f4ff;
+}
+
+button.astro-speaker:focus-visible {
+  outline: 3px solid #7856e8;
+  outline-offset: 2px;
+}
