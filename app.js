@@ -177,7 +177,7 @@ function zoom(){
   
   $('pair').append(card);
  }
- act('Về bảng vần',matrix);
+ act('⬅️Về bảng vần',matrix);
 }
 const foundParts=new Set();
 function stars(){page(2,'<p>Chạm vào một ngôi sao để đọc và tìm vần. <b>'+state.stars.length+' / 10</b> sao đã sáng.</p><div class="starfield" id="sky"></div>',stars);words.forEach((w,i)=>{const b=add('sky',w,()=>{wordIndex=i;turn=0;foundParts.clear();word()},'wordstar'+(state.stars.includes(i)?' lit':''));b.innerHTML='<img src="img/starguide.webp" alt=""><span>'+w+'</span>';b.setAttribute('aria-label',w+(state.stars.includes(i)?', đã sáng':''))});act('Huấn luyện ASTRO →',()=>openScene(3),'gold')}
@@ -235,7 +235,7 @@ phraseRow.append(phraseText, speaker);
    const actions=dialog.querySelector('.popup-actions');
 //    actions.append(button('Thử lại',()=>{dialog.close();train()}));
    const last=trainingIndex===errors.length-1;
-   actions.append(button(last?'Kết nối chòm sao':'Lượt tiếp theo',()=>{
+   actions.append(button(last?'Kết nối chòm sao':'Lượt tiếp theo➡️',()=>{
     dialog.close();
     if(last){state.trained=true;save();openScene(4)}
     else{trainingIndex++;train()}
