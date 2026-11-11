@@ -112,7 +112,9 @@ function matrix() {
    return;
   }
   const key = vowel + end;
-  if (!rhymes.includes(key)) {
+  
+  //if (!rhymes.includes(key)) {
+  if (key === 'ut' || !rhymes.includes(key)) {
    source.textContent = 'Hai âm này chưa ghép thành vần trong bảng của bài. Em chọn lại nhé!';
    return;
   }
