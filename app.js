@@ -1,5 +1,5 @@
 const $=id=>document.getElementById(id);
-const rhymes='ac at ăc ăt âc ât oc ot ôc ôt ơt uc ut ưc'.split(' ');
+const rhymes='ac at ăc ăt âc ât oc ot ôc ôt ơt uc ưc'.split(' ');
 const words=['bật lửa','lọ mực','cột mốc','hạt thóc','xúc xắc','gót chân','đôi mắt','lác đác','giấc mơ','quả ớt'];
 const titles=['Khởi động phi thuyền','Kích hoạt ma trận Vần','Giải cứu ngôi sao TỪ','Huấn luyện ASTRO','Kết nối chòm sao','Thiên hà tỏa sáng'];
 const sceneIntros=titles.map((title,i)=>'Mở đầu Màn '+(i+1)+' – '+title);
