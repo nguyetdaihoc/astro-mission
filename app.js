@@ -197,7 +197,7 @@ function startTraining(){
  trainingIndex=0;
  train();
 }
-function train(){const [a,wrong,right,r]=errors[trainingIndex];page(3,'<p>Lượt '+(trainingIndex+1)+' / 3</p><div class="robotline"><img src="img/astro.webp" alt="ASTRO"><div>ASTRO ghép nhầm <strong class="training-error">'+a+' '+wrong+'</strong>.<br>Em hãy chọn từ đúng và đọc mẫu để ASTRO học cách đọc và ghép từ chính xác nhé!<span style="white-space:nowrap">nhé! <button type="button" class="minor" aria-label="Nghe đọc đề" title="Nghe đọc đề" onclick="play(&quot;Đề Huấn luyện ASTRO&quot;)" style="display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;vertical-align:middle;border-radius:50%;font-size:22px">🔊</button></span></div></div><div class="chips" id="answers"></div>',train);
+function train(){const [a,wrong,right,r]=errors[trainingIndex];page(3,'<p>Lượt '+(trainingIndex+1)+' / 3</p><div class="robotline"><img src="img/astro.webp" alt="ASTRO"><div>ASTRO ghép nhầm <strong class="training-error">'+a+' '+wrong+'</strong>.<br>Em hãy chọn từ đúng và đọc mẫu để ASTRO học cách đọc và ghép từ chính xác nhé!<span style="white-space:nowrap">nhé! <button type="button" class="astro-speaker" aria-label="Nghe đọc đề" title="Nghe đọc đề" onclick="play(&quot;Đề Huấn luyện ASTRO&quot;)">🔊</button></span></div></div><div class="chips" id="answers"></div>',train);
  const options = trainingIndex % 2 ? [right, wrong] : [wrong, right];
  for (const ending of options) {
   const phrase = a+' '+ending;
