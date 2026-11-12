@@ -118,3 +118,23 @@ button.astro-speaker:focus-visible {
   outline: 3px solid #ffd65a;
   outline-offset: 3px;
 }
+/* Màn 5 – Icon cho ba lựa chọn “Em đọc thế nào?” */
+#ratings > button::before {
+  display: inline-block;
+  margin-right: 0.35em;
+  font-size: 1.15em;
+  line-height: 1;
+  vertical-align: -0.06em;
+}
+
+#ratings > button:nth-child(1)::before {
+  content: "🌟";
+}
+
+#ratings > button:nth-child(2)::before {
+  content: "📖";
+}
+
+#ratings > button:nth-child(3)::before {
+  content: "🙋";
+}
